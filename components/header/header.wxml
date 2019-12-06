@@ -1,0 +1,20 @@
+<!--components/header/header.wxml-->
+
+<view class="header-warp">
+    <view class="header-title">
+        <text class="title">{{headerTitle}}</text>
+        <view class="select" bindtap="_toggleRight">
+            <text>筛选</text>
+            <i-icon class="icon-search" size="14" type="search" />
+        </view>
+    </view>
+    <view class="addr">
+        <text class="title">地区:</text>
+        <text class="detail">{{headerAddr}}</text>
+    </view>
+    <view class="enterprise">
+        <text class="title">企业名称:</text>
+        <text class="enterprise-name">{{headerEnterprise}}</text>
+    </view>
+    <text class="check-num">已排查: {{headerCheckedNum}}/{{headerCheckNum}}</text>
+</view>

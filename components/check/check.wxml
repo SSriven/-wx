@@ -1,0 +1,66 @@
+<!-- components/check/check.wxml -->
+<view class="check-box">
+    <header header-title="隐患排查" 
+    header-addr="{{addr}}" 
+    header-enterprise="{{enterprise}}" 
+    header-check-num="{{checkDataArr.length}}"
+    header-checked-num="{{checkedNum}}"
+    bind:toggleRight="toggleRight"></header>
+    <view class="check-ul" style="height:{{windowH-180.5}}px;">
+        <view wx:for="{{checkDataArr}}" wx:key="index" class="check-ul-li">
+            <view class="item-top">
+                <text class="title">{{item.name}}</text>
+                <text class="level {{item.level == '一般隐患' ? 'level-1' : item.level == '较大隐患' ? 'level-2' : 'level-3'}}">
+                    <text>{{item.level}}</text>
+                </text>
+                <text class="time">{{item.ckdtm}}</text>
+                <text class="index">{{index+1}}</text>
+            </view>
+            <view class="item-middle">
+                {{item.desp}}
+            </view>
+            <view class="item-bottom">
+                <text class="type">{{item.subtp}}</text>
+                <view class="check-btn {{item.flag == '0' ? '' : 'checked-btn'}} ">
+                    {{item.flag == '0' ? '排查' : '已排查'}}
+                </view>
+                <view class="upload">上传图片</view>
+            </view>
+        </view>
+    </view>
+    <i-drawer mode="right" visible="{{showRight}}" bind:close="toggleRight">
+        <view class="drawer-container" style="height:{{windowH}}px;width:{{windowW/1.6}}px;">
+            <i-collapse name="{{name}}">
+                <i-collapse-item  name="name1" title="新建县" i-class-title="collapse-item-title" i-class-content="collapse-item-content">
+                    <view slot="content">
+                        <i-collapse name="{{name1}}">
+                            <i-collapse-item title="新建中心区" name="name11">
+                                <view slot="content">
+                                    <i-collapse name="{{name1}}">
+                                        <i-collapse-item title="中心镇-社区A" name="name11">
+                                            <view slot="content">
+                                                <i-collapse name="{{name1}}">
+                                                    <i-collapse-item title="企业A" name="name11">
+                                                        <view slot="content">
+                                                            <i-cell-group>
+                                                                <i-cell>职业健康<i-icon type="right" /></i-cell>
+                                                                <i-cell>安全管理</i-cell>
+                                                                <i-cell>特种设备</i-cell>
+                                                                <i-cell>电气安全</i-cell>
+                                                                <i-cell>消防</i-cell>
+                                                            </i-cell-group>
+                                                        </view>
+                                                    </i-collapse-item>
+                                                </i-collapse>
+                                            </view>
+                                        </i-collapse-item>
+                                    </i-collapse>
+                                </view>
+                            </i-collapse-item>
+                        </i-collapse>
+                    </view>
+                </i-collapse-item>
+            </i-collapse>
+        </view>
+    </i-drawer>
+</view>

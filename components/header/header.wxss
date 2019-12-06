@@ -1,0 +1,56 @@
+/* components/header/header.wxss */
+.header-warp{
+    height:90px;
+    background:linear-gradient(to bottom, #409eff, #5ac8fa);
+    position: relative;
+    padding:0 25px 15.5px 25px;
+    box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.35);
+}
+.header-warp .header-title{
+    height:30px;
+    line-height: 30px;
+}
+.header-warp .header-title .title{
+    color:#fff;
+    font-size: 18px;
+}
+.header-warp .header-title .select{
+    float:right;
+}
+.header-warp .header-title .select text{
+    color:#fff;
+    font-size: 14px;
+    margin-right:5px;
+}
+.header-warp .header-title .select .icon-search{
+    color:#fff;
+}
+.header-warp .addr,.enterprise{
+    height:30px;
+    line-height:30px;
+    color:#fff;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.header-warp .addr .title,.header-warp .enterprise .title{
+    font-size: 16px;
+    color:#fff;
+    margin-right:10px;
+    
+}
+.header-warp .addr .detail,.header-warp .enterprise .enterprise-name{
+    color:#fff;
+    font-size: 14px;
+}
+.header-warp .enterprise{
+    max-width: 70%;
+}
+.header-warp .check-num{
+    color:#fff;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    bottom:20px;
+    right:25px;
+}

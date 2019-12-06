@@ -1,0 +1,114 @@
+/* components/check/check.wxss */
+.check-box{
+    height:100%;
+}
+.check-ul{
+    padding:15px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.check-ul .check-ul-li{
+    background: #fff;
+    border-radius: 10px;
+    /* height:105px; */
+    padding:9.375px 15px;
+    overflow: hidden;
+    margin-bottom:9.375px;
+    box-shadow: 0 3px 3px rgba(160, 160, 160, 0.35);
+}
+.check-ul .check-ul-li .item-top{
+    line-height: 30px;
+    height:30px;
+}
+.check-ul .check-ul-li .item-top .title{
+    font-size: 16px;
+    color:#303133;
+    float: left;
+    margin-right: 10px;
+}
+.check-ul .check-ul-li .item-top .level{
+    font-size: 13px;
+    float: left;
+    margin-right:10px;
+    color:#409eff;
+}
+.check-ul .check-ul-li .item-top .time{
+    font-size: 12px;
+    float: left;
+    color:#999;
+}
+
+.check-ul .check-ul-li .item-top .level-1{
+    color:#409eff;
+}
+.check-ul .check-ul-li .item-top .level-2{
+    color:#E6C23A;
+}
+.check-ul .check-ul-li .item-top .level-3{
+    color:#F56C6C;
+}
+.check-ul .check-ul-li .item-top .index{
+    font-size: 13px;
+    line-height: 20px;
+    float: right;
+    color:#fff;
+    display: inline-block;
+    width:20px;
+    height:20px;
+    text-align: center;
+    background: #26baff;
+    border-radius: 2px;
+}
+.check-ul .check-ul-li .item-middle{
+    /* height:30px; */
+    line-height: 20px;
+    overflow: hidden;
+    white-space:warp;
+    overflow:hidden;
+    display:-webkit-box;
+    text-overflow:ellipsis;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    white-space:normal;
+}
+.check-ul .check-ul-li .item-bottom{
+    height:35px;
+    line-height: 35px;
+}
+.check-ul .check-ul-li .item-bottom .type{
+    color:#999;
+    font-size: 13px;
+}
+.check-ul .check-ul-li .item-bottom .check-btn{
+    float: right;
+    width:80px;
+    height:30px;
+    line-height: 30px;
+    margin-top:2.5px;
+    text-align: center;
+    background: #F56C6C;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 14px;
+}
+.check-ul .check-ul-li .item-bottom .checked-btn{
+    background: #67C23A;
+}
+.drawer-container{
+    background: #fff;
+}
+.upload{
+    display: inline-block;
+    float: right;
+    background: #409eff;
+    width:80px;
+    height:30px;
+    line-height: 30px;
+    margin-top:2.5px;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 14px;
+    text-align: center;
+    margin-right:10px;
+    /* transform: rotate(-90deg); */
+}

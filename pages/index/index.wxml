@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container" style="height:{{windowH}}px">
+  <view class="page-components" style="height:{{windowH-50}}px">
+    <check-page bind:toggleRight="toggleRight"></check-page>
+  </view>
+  <view class="tab-bar">
+    <i-tab-bar current="{{ current }}" color="#409eff" bindchange="handleChange">
+      <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="排查"></i-tab-bar-item>
+      <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="审核"></i-tab-bar-item>
+      <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="整改"></i-tab-bar-item>
+    </i-tab-bar>
+  </view>
+  
+</view>
+
