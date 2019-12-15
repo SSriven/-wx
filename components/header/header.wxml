@@ -3,7 +3,7 @@
 <view class="header-warp">
     <view class="header-title">
         <text class="title">{{headerTitle}}</text>
-        <view class="select" bindtap="_toggleRight">
+        <view class="select" bindtap="_toggleRight" hidden="{{headerSearch}}">
             <text>筛选</text>
             <i-icon class="icon-search" size="14" type="search" />
         </view>
@@ -16,5 +16,5 @@
         <text class="title">企业名称:</text>
         <text class="enterprise-name">{{headerEnterprise}}</text>
     </view>
-    <text class="check-num">已排查: {{headerCheckedNum}}/{{headerCheckNum}}</text>
+    <text class="check-num" hidden="{{headerRightBottom}}">{{headerFlag}}: {{headerCheckedNum}}/{{headerCheckNum}}</text>
 </view>

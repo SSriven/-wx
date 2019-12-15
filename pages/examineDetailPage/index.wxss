@@ -1,0 +1,2 @@
+/* pages/examineDetailPage/index.wxss */
+@import '../checkDetailPage/index.wxss'

@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container" style="height:{{windowH}}px">
+  <view class="page-components" style="height:{{windowH-50}}px">
+    <view hidden="{{current != 'checkpage'}}">
+      <check-page id="check_page"></check-page>
+    </view>
+    <view hidden="{{current != 'examinepage'}}">
+      <examine-page id="examine_page"></examine-page>
+    </view>
+    <view hidden="{{current != 'rectification'}}">
+      <rectification-page id="rectification_page"></rectification-page>
+    </view>
+    <view hidden="{{current != 'aboutMePage'}}">
+      <aboutme-page id="aboutme_page"></aboutme-page>
+    </view>
+  </view>
+  <view class="tab-bar">
+    <i-tab-bar current="{{ current }}" color="#409eff" bindchange="handleChange">
+      <i-tab-bar-item key="checkpage" icon="homepage" current-icon="homepage_fill" title="排查"></i-tab-bar-item>
+      <i-tab-bar-item key="examinepage" icon="group" current-icon="group_fill" title="审核"></i-tab-bar-item>
+      <i-tab-bar-item key="rectification" icon="remind" current-icon="remind_fill" title="整改"></i-tab-bar-item>
+      <i-tab-bar-item key="aboutMePage" icon="addressbook" current-icon="addressbook_fill" title="我"></i-tab-bar-item>
+    </i-tab-bar>
+  </view>
+  
+</view>
+

@@ -15,6 +15,17 @@
     overflow: hidden;
     margin-bottom:9.375px;
     box-shadow: 0 3px 3px rgba(160, 160, 160, 0.35);
+    position: relative;
+    animation: show 1s ease-in-out;
+}
+@keyframes show{
+  from{
+    transform:translateY(24px);
+    opacity: 0;
+  }to{
+    transform:translateY(0);
+    opacity: 1;
+  }
 }
 .check-ul .check-ul-li .item-top{
     line-height: 30px;
@@ -50,13 +61,15 @@
 .check-ul .check-ul-li .item-top .index{
     font-size: 13px;
     line-height: 20px;
-    float: right;
+    position: absolute;
+    top:0;
+    right: 0;
     color:#fff;
     display: inline-block;
     width:20px;
     height:20px;
     text-align: center;
-    background: #26baff;
+    background:linear-gradient(to right bottom, #409eff, #5ac8fa);
     border-radius: 2px;
 }
 .check-ul .check-ul-li .item-middle{
@@ -86,21 +99,25 @@
     line-height: 30px;
     margin-top:2.5px;
     text-align: center;
-    background: #F56C6C;
+    background: #67C23A;
     border-radius: 5px;
     color:#fff;
     font-size: 14px;
 }
 .check-ul .check-ul-li .item-bottom .checked-btn{
-    background: #67C23A;
+    background: #f56c6c;
 }
-.drawer-container{
-    background: #fff;
+.check-ul .check-ul-li .item-bottom .changed-btn{
+    background: #e6a23c;
 }
+.check-ul .check-ul-li .item-bottom .fail-btn{
+  background: #909399;
+}
+
 .upload{
     display: inline-block;
     float: right;
-    background: #409eff;
+    background:linear-gradient(to right bottom, #409eff, #5ac8fa);
     width:80px;
     height:30px;
     line-height: 30px;

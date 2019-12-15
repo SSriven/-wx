@@ -2,12 +2,6 @@
   "component": true,
   "usingComponents": {
     "header":"../header/header",
-    "i-card":"../dist/card/index",
-    "i-drawer": "../dist/drawer/index",
-    "i-collapse": "../dist/collapse/index",
-    "i-collapse-item": "../dist/collapse-item/index",
-    "i-cell-group": "../dist/cell-group/index",
-    "i-cell": "../dist/cell/index",
-    "i-icon":"../dist/icon/index"
+    "select-menu":"../selectMenu/selectMenu"
   }
 }

@@ -1,14 +1,36 @@
-/**index.wxss**/
-.container{
-  position: relative;
+/* pages/index/index.wxss */
+.header{
+  height:400rpx;
+  background:linear-gradient(to bottom, #409eff, #5ac8fa);
+  line-height: 400rpx;
+  text-align: center;
+  margin-bottom:80rpx;
 }
-.tab-bar{
-  position: absolute;
-  bottom:0;
-  width: 100%;
+.input-group{
+  width:280px;
+  overflow: hidden;
+  margin:0 auto;
 }
-.page-components{
-  position: absolute;
-  top:0;
-  width: 100%;
+.input-group .input{
+  margin-bottom:20px;
+  overflow: hidden;
+}
+.input-group .input .icon{
+  float: left;
+  color:#409eff;
+  margin-top: 6px;
+}
+.input-group .input input{
+  float: right;
+  width:230px;
+  height:42px;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button{
+  background: #409eff;
+  color:#fff;
+  width: 280px !important;
+  margin-top: 15px;
+  
 }

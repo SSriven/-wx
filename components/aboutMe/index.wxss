@@ -1,0 +1,7 @@
+/* components/aboutMe/index.wxss */
+.change-user{
+  margin-top:20px;
+  margin-bottom:20px;
+  background: #f56c6c;
+  color:#fff;
+}

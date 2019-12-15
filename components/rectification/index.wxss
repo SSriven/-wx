@@ -1,0 +1,2 @@
+/* components/rectification/index.wxss */
+@import '../examine/index.wxss';

@@ -38,5 +38,6 @@ App({
     userInfo: null,
     windowW: screen.screenWidth,
     windowH: screen.windowHeight,
+    pat: new RegExp("[^a-zA-Z0-9\_\u4e00-\u9fa5]", "i"),
   }
 })

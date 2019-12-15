@@ -1,0 +1,14 @@
+/**index.wxss**/
+.container{
+  position: relative;
+}
+.tab-bar{
+  position: absolute;
+  bottom:0;
+  width: 100%;
+}
+.page-components{
+  position: absolute;
+  top:0;
+  width: 100%;
+}

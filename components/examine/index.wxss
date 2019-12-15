@@ -1,0 +1,5 @@
+/* components/examine/index.wxss */
+@import '../check/check.wxss';
+/* .check-ul .check-ul-li .item-top .index{
+  background: #F56C6C;
+} */

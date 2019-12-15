@@ -1,7 +1,7 @@
 export default {
     check_A_1: [{
         "eid": "E98FEDA21489A4564851B8F6407C4EB63",
-        "flag": 1,
+        "flag": 2,
         "level": "一般隐患",
         "rows": 27,
         "ckuid": "黎明",
@@ -127,7 +127,7 @@ export default {
         "scid": ""
     }, {
         "eid": "E98FEDA21489A4564851B8F6407C4EB63",
-        "flag": 1,
+        "flag": 3,
         "level": "一般隐患",
         "rows": 27,
         "ckuid": "黎明",
@@ -135,6 +135,7 @@ export default {
         "ckdtm": "2019-12-06 20:50:20",
         "desp": "未建立劳动防护用品的采购、验收、保管、发放、使用、报废等管理制度",
         "imgfl": "",
+        "rktdesp":"xxxxxxxxxxxxxxxxxxx未建立劳动防护用品的采购、验收、保管、发放、使用、报废等管理制度未建立劳动防护用品的采购、验收、保管、发放、使用、报废等管理制度",
         "subtp": "人力与管理",
         "name": "基础管理",
         "jcyj": "GBT12801-2008 第6.2.5条",

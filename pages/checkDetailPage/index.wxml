@@ -1,0 +1,31 @@
+<!--pages/checkDetailPage/index.wxml-->
+<i-cell-group>
+    <i-cell title="项目名称" value="{{item.name}}"></i-cell>
+    <i-cell title="类别" value="{{item.subtp}}"></i-cell> 
+    <i-cell title="隐患级别" value="{{item.level}}"></i-cell>
+    <i-cell title="排查日期" value="{{item.ckdtm}}"></i-cell>
+    <i-cell title="排查员" value="{{item.ckuid}}"></i-cell>
+    <i-cell title="排查状态" value="{{item.flag == '0' ? '未排查' : item.flag == '1' ? '审核中' : item.flag == '2' ? '整改中' : '审核失败'}}"></i-cell>
+    <i-cell title="审核备注" label="{{item.rktdesp}}"></i-cell>
+    <i-cell title="检查依据" label="{{item.jcyj}}"></i-cell>
+    <i-cell title="隐患描述" label="{{item.desp}}"></i-cell>
+    <i-cell title="排查照片"></i-cell>
+    <view class="photo">
+      <view class="add" bindtap="uploadImg"><i-icon type="add" size="36"/></view>
+      <view class="img" wx:for="{{imgs}}" 
+        wx:key="{{item}}" 
+        bindtap="preview" 
+        data-src="{{item}}"
+        data-index="{{index}}"
+        bindlongpress="longTapImg"
+        bindtouchstart="ontouchstart"
+        bindtouchend="ontouchend">
+        <image src="{{item}}" ></image>
+        <view class="close" hidden="{{index != currentImgIndex}}" catchtap="deleteImg">
+          <i-icon size="12" type="close" />
+        </view>
+      </view>
+      
+    </view>
+</i-cell-group>
+<button class="back-btn" bindtap="back">返回</button>

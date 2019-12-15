@@ -1,15 +1,15 @@
-<!--index.wxml-->
-<view class="container" style="height:{{windowH}}px">
-  <view class="page-components" style="height:{{windowH-50}}px">
-    <check-page bind:toggleRight="toggleRight"></check-page>
-  </view>
-  <view class="tab-bar">
-    <i-tab-bar current="{{ current }}" color="#409eff" bindchange="handleChange">
-      <i-tab-bar-item key="homepage" icon="homepage" current-icon="homepage_fill" title="排查"></i-tab-bar-item>
-      <i-tab-bar-item key="group" icon="group" current-icon="group_fill" title="审核"></i-tab-bar-item>
-      <i-tab-bar-item key="remind" icon="remind" current-icon="remind_fill" title="整改"></i-tab-bar-item>
-    </i-tab-bar>
-  </view>
-  
+<!--pages/index/index.wxml-->
+<view class="header">
+  这里是一个logo
 </view>
-
+<view class="input-group">
+  <view class="input">
+    <i-icon type="mine" class="icon" size="42"/>
+    <input type="text" placeholder="账号" bindblur="onblur" confirm-type="done"></input>
+  </view>
+  <view class="input">
+    <i-icon type="lock" class="icon" size="42"/>
+    <input type="text" password bindblur="onPassBlur" placeholder="密码"></input>
+  </view>
+</view>
+<button bindtap="login">登录</button>

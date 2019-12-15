@@ -1,0 +1,13 @@
+<!--components/inputDialog/index.wxml-->
+<view class="mask" wx:if="{{isShow}}" style='width:{{screenW}}px;min-height:{{screenH}}px'>
+    <view class="mask-title">
+      <view class="dialog-title">
+        {{title}}
+      </view>
+      <input type="text" placeholder='{{placeholderText}}' bindblur="onblurEvent" bindinput="oninputEvent"></input>
+      <view class="dialog-btn">
+        <button class="cancel" catchtap='_cancelEvent'>{{ cancelText }}</button>
+        <button class="certain" catchtap='_confirmEvent'>{{ confirmText }}</button>
+      </view>
+    </view>
+  </view>

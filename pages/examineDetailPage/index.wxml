@@ -1,0 +1,25 @@
+<!--pages/examineDetailPage/index.wxml-->
+<i-cell-group>
+    <i-cell title="项目名称" value="{{item.name}}"></i-cell>
+    <i-cell title="类别" value="{{item.subtp}}"></i-cell> 
+    <i-cell title="隐患级别" value="{{item.level}}"></i-cell>
+    <i-cell title="排查日期" value="{{item.ckdtm}}"></i-cell>
+    <i-cell title="排查员" value="{{item.ckuid}}"></i-cell>
+    <i-cell title="整改标准" label="{{item.jcyj}}"></i-cell>
+    <i-cell title="隐患描述" label="{{item.desp}}"></i-cell>
+    <i-cell title="排查照片"></i-cell>
+    <view class="photo">
+      <view class="img" wx:for="{{imgs}}" 
+        wx:key="{{item}}" 
+        bindtap="preview" 
+        data-src="{{item}}"
+        data-index="{{index}}">
+        <image src="{{item}}" ></image>
+        <view class="close" hidden="{{index != currentImgIndex}}" catchtap="deleteImg">
+          <i-icon size="12" type="close" />
+        </view>
+      </view>
+      
+    </view>
+</i-cell-group>
+

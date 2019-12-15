@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "header": "../header/header",
+    "select-menu": "../selectMenu/selectMenu",
+    "i-modal": "../dist/modal/index",
+    "rejectDialog": "../inputDialog/index"
+  }
+}

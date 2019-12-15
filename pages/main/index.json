@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-tab-bar": "../../components/dist/tab-bar/index",
+    "i-tab-bar-item": "../../components/dist/tab-bar-item/index",
+    "check-page":"../../components/check/check",
+    "examine-page":"../../components/examine/index",
+    "aboutme-page": "../../components/aboutMe/index",
+    "rectification-page":"../../components/rectification/index"
+  },
+  "navigationBarBackgroundColor": "#409eff"
+}

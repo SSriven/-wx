@@ -8,7 +8,10 @@ Component({
     headerAddr:String,
     headerEnterprise:String,
     headerCheckNum:String,
-    headerCheckedNum:String
+    headerCheckedNum:String,
+    headerFlag:String,
+    headerSearch:Boolean,
+    headerRightBottom:Boolean
   },
 
   /**

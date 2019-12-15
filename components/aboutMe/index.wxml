@@ -1,0 +1,7 @@
+<!--components/aboutMe/index.wxml-->
+<i-cell-group>
+    <i-cell title="账号" value="15070136342"></i-cell>
+    <i-cell title="姓名" value="黎明"></i-cell> 
+    <i-cell title="职位" value="排查员"></i-cell>
+</i-cell-group>
+<button class="change-user" bindtap="changeUser">切换账号</button>

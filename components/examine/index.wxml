@@ -1,0 +1,44 @@
+<!--components/examine/index.wxml-->
+<view class="check-box">
+    <header header-title="{{headerTitle}}"
+    header-addr="{{addr}}" 
+    header-search="{{headerSearch}}"
+    header-flag="已审核"
+    header-check-num="{{examineDataArr.length}}"
+    header-checked-num="{{examineNum}}"
+    header-enterprise="{{enterprise}}" 
+    header-right-bottom="{{headerRightBottom}}"
+    bind:toggleRight="toggleRight"></header>
+    <view class="check-ul" style="height:{{windowH-180.5}}px;">
+        <view class="check-ul-li" wx:for="{{examineDataArr}}" wx:key="index" data-scid="{{item.scid}}" bindtap="seeDetail" >
+            <view class="item-top" >
+                <text class="title">{{item.name}}</text>
+                <text class="level {{item.level == '一般隐患' ? 'level-1' : item.level == '较大隐患' ? 'level-2' : 'level-3'}}">
+                    <text>{{item.level}}</text>
+                </text>
+                <text class="time">{{item.ckdtm}}</text>
+                <text class="index">{{index+1}}</text>
+            </view>
+            <view class="item-middle">
+               {{item.desp}}
+            </view>
+            <view class="item-bottom">
+                <text class="type">{{item.subtp}}</text>
+                <view data-index="{{index}}" class="check-btn checked-btn {{item.stat == '1' ? '' : 'changed-btn'}}" catchtap="onExamine">
+                    {{item.stat == '1' ? '审核' : '整改中'}}
+                </view>
+                <view data-stat="{{item.stat}}" data-index="{{index}}" class="upload" catchtap="reject">驳回</view>
+            </view>
+        </view>
+    </view>
+    <select-menu show-right="{{showRight}}" bind:toggleRight="toggleRight"></select-menu>
+</view>
+ <rejectDialog
+      id='rejectDialog' 
+      title='驳回理由' 
+      placeholderText='请输入驳回理由' 
+      cancelText='取消' 
+      confirmText='确认'
+      bind:cancelEvent="onCancelReject"  
+      bind:confirmEvent="onCertainReject">
+  </rejectDialog>
