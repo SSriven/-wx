@@ -30,7 +30,6 @@ Component({
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
     attached: function () {
-      console.log("组件初始化");
       this.setData({
         examineDataArr: examineData.data,
         examineNum: examineData.data.filter(item => item.stat == '2').length

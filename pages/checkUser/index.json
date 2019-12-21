@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "i-icon": "../../components/dist/icon/index",
     "i-spin": "../../components/dist/spin/index"
   }
 }

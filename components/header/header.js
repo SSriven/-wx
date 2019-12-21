@@ -25,8 +25,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _toggleRight() {
-      this.triggerEvent("toggleRight")
+    _toggleTreeMenu() {
+      this.triggerEvent("toggleTreeMenu")
     }
   }
 })

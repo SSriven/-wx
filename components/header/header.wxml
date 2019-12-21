@@ -3,7 +3,7 @@
 <view class="header-warp">
     <view class="header-title">
         <text class="title">{{headerTitle}}</text>
-        <view class="select" bindtap="_toggleRight" hidden="{{headerSearch}}">
+        <view class="select" bindtap="_toggleTreeMenu" hidden="{{headerSearch}}">
             <text>筛选</text>
             <i-icon class="icon-search" size="14" type="search" />
         </view>

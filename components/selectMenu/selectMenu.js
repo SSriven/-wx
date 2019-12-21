@@ -1,4 +1,5 @@
 // components/selectMenu/selectMenu.js
+import request from '../../utils/http.js'
 const app = getApp();
 Component({
   /**
@@ -26,8 +27,26 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    _toggleRight(){
-      this.triggerEvent("toggleRight")
+    loadTreeMenu(){
+      request.post("/getTree/"+app.globalData.userInfo.pid,{})
+      .then(res=>{
+        console.log(res);
+        let obj1 = {}
+        var cssbArr = res.data.reduce((cur, next) => {
+          obj1[next.cssbname] ? "" : obj1[next.cssbname] = true && cur.push(next);
+          return cur;
+        }, [])
+        console.log(cssbArr)
+        let obj2 = {};
+        var townArr = res.data.reduce((cur, next) => {
+          obj2[next.townname] ? "" : obj2[next.townname] = true && cur.push(next);
+          return cur;
+        }, [])
+        console.log(townname)
+      })
+    },
+    _toggleTreeMenu(){
+      this.triggerEvent("toggleTreeMenu")
     },
     _handleChange({ detail }) {
       this.setData({
@@ -35,7 +54,7 @@ Component({
       });
     },
     _confirm(){
-      this.triggerEvent("toggleRight")
+      this.triggerEvent("toggleTreeMenu")
     }
   }
 })

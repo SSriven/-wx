@@ -5,11 +5,12 @@
 <view class="input-group">
   <view class="input">
     <i-icon type="mine" class="icon" size="42"/>
-    <input type="text" placeholder="账号" bindblur="onblur" confirm-type="done"></input>
+    <input type="text" placeholder="账号" bindblur="onblur" bindinput="oninput" confirm-type="done"></input>
   </view>
   <view class="input">
     <i-icon type="lock" class="icon" size="42"/>
-    <input type="text" password bindblur="onPassBlur" placeholder="密码"></input>
+    <input type="text" password bindblur="onPassBlur" placeholder="密码" bindinput="onPassInput" confirm-type="done"></input>
   </view>
 </view>
 <button bindtap="login">登录</button>
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

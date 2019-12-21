@@ -1,5 +1,5 @@
 <!--components/selectMenu/selectMenu.wxml-->
-<i-drawer mode="right" visible="{{showRight}}" bind:close="_toggleRight">
+<i-drawer mode="right" visible="{{showRight}}" bind:close="_toggleTreeMenu">
   <view class="drawer-container" style="height:{{windowH}}px;width:{{windowW/1.6}}px;">
     <view class="drawer-container-select" style="height:{{windowH-80}}px;">
       <i-tabs current="{{ current }}" color="#409eff" bindchange="_handleChange">

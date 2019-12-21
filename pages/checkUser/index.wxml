@@ -1,0 +1,2 @@
+<!--pages/checkUser/index.wxml-->
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

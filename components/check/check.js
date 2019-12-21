@@ -1,5 +1,6 @@
 // components/check/check.js
 import check_A_1_data from '../../data/check_A_1.js'
+import request from '../../utils/http.js'
 const app = getApp();
 /**
  * 上传图片
@@ -27,20 +28,32 @@ Component({
     checkedNum:0,
     headerTitle:'职业健康',
     headerSearch:false,
-    headerRightBottom:false
+    headerRightBottom:false,
+    spinShow:true
   },
 
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
     attached: function () { 
-      console.log("组件初始化");
-      this.setData({
-        checkDataArr:check_A_1_data.check_A_1,
-        checkedNum:check_A_1_data.check_A_1.filter(item => item.flag == '1').length
+      let that = this;
+      request.post("/selectScrthrtByStid/255C86119272439dBD06D259A9E3D209E98FEDA21489A4564851B8F6407C4EB63",{})
+      .then(res=>{
+        console.log(res.data);
+        that.setData({
+          checkDataArr: res.data,
+          checkedNum: res.data.filter(item => item.flag == '1').length,
+          spinShow:false
+        })
       })
+      // this.setData({
+      //   checkDataArr:check_A_1_data.check_A_1,
+      //   checkedNum:check_A_1_data.check_A_1.filter(item => item.flag == '1').length
+      // })
       // console.log(check_A_1_data.check_A_1);
     },
     ready:function(){
+      this.treeMenu_check = this.selectComponent("#treeMenu_check");
+      // this.treeMenu_check.loadTreeMenu();
     },
     moved: function () { },
     detached: function () { },
@@ -57,7 +70,7 @@ Component({
     /**
      * 打开筛选菜单栏
      */
-    toggleRight(){
+    toggleTreeMenu(){
         this.setData({
           showRight:!this.data.showRight
         })

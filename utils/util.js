@@ -13,7 +13,38 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+export { formatTime }
 
-module.exports = {
-  formatTime: formatTime
+export function wxToast(title,icon,duration){
+  wx.showToast({
+    title,
+    icon,
+    duration
+  })
+}
+
+export const storage = {
+  get(key){
+    return wx.getStorageSync(key);
+    // wx.getStorage({
+    //   key,
+    //   success: function(res) {
+    //     if(callBack)
+    //       callBack(res);
+    //   },
+    //   fail:function(err){
+    //     if (callBack)
+    //       callBack({data:null});
+    //   }
+    // })
+  },
+  set(key,data){
+    wx.setStorage({
+      key,
+      data,
+    })
+  },
+  clear(){
+    wx.clearStorage();
+  }
 }

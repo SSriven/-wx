@@ -46,7 +46,7 @@ class Request{
 }
 
 const request = new Request({
-  baseURL: 'http://test',
+  baseURL: 'http://123.207.70.177:6060/mini',
   withBaseURL: true
 });
 

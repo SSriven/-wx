@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import {storage} from "../../utils/util.js"
 Page({
   data: {
     current: 'checkpage',
@@ -21,7 +21,11 @@ Page({
     });
   },
   onLoad: function () {
-    
+    let userInfo = storage.get("userInfo");
+    let userType = userInfo.pid[0];
+    this.setData({
+      userType
+    })
   },
   onReady:function(){
     this.check_page = this.selectComponent("#check_page");

@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "header":"../header/header",
-    "select-menu":"../selectMenu/selectMenu"
+    "select-menu":"../selectMenu/selectMenu",
+    "i-spin": "../dist/spin/index"
   }
 }

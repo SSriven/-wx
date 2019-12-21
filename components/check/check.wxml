@@ -8,7 +8,7 @@
     header-enterprise="{{enterprise}}" 
     header-check-num="{{checkDataArr.length}}"
     header-checked-num="{{checkedNum}}"
-    bind:toggleRight="toggleRight"></header>
+    bind:toggleTreeMenu="toggleTreeMenu"></header>
     <view class="check-ul" style="height:{{windowH-180.5}}px;">
         <view wx:for="{{checkDataArr}}" wx:key="index" class="check-ul-li" data-sid="{{item.sid}}" bindtap="seeDetail" >
             <view class="item-top" >
@@ -31,5 +31,6 @@
             </view>
         </view>
     </view>
-    <select-menu show-right="{{showRight}}" bind:toggleRight="toggleRight"></select-menu>
+    <select-menu id="treeMenu_check" show-right="{{showRight}}" bind:toggleTreeMenu="toggleTreeMenu"></select-menu>
 </view>
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>
