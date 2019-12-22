@@ -1,6 +1,8 @@
 // components/check/check.js
 import check_A_1_data from '../../data/check_A_1.js'
 import request from '../../utils/http.js'
+import {printLog} from "../../utils/util.js"
+import {wxToast} from "../../utils/util.js"
 const app = getApp();
 /**
  * 上传图片
@@ -21,15 +23,14 @@ Component({
     enterprise:'企业A',
     windowH:app.globalData.windowH,
     windowW:app.globalData.windowW,
-    showRight:false,
-    name:'name1',
-    name1:'name11',
-    checkDataArr:[],
-    checkedNum:0,
+    showRight:false,//控制右侧筛选的菜单显示与隐藏
+    checkDataArr:[],//隐患排查项目
+    seleceDataArr:[],
+    checkedNum:0,//已排查的数量
     headerTitle:'职业健康',
-    headerSearch:false,
-    headerRightBottom:false,
-    spinShow:true
+    headerSearch:false,//显示筛选
+    headerRightBottom:false,//显示已排查
+    spinShow:true,//显示加载
   },
 
   lifetimes: {
@@ -38,12 +39,16 @@ Component({
       let that = this;
       request.post("/selectScrthrtByStid/255C86119272439dBD06D259A9E3D209E98FEDA21489A4564851B8F6407C4EB63",{})
       .then(res=>{
-        console.log(res.data);
+        printLog(res.data,"components check_check.js","line:42");
         that.setData({
           checkDataArr: res.data,
-          checkedNum: res.data.filter(item => item.flag == '1').length,
+          seleceDataArr:res.data,
+          checkedNum: res.data.filter(item => item.flag == '1' || item.flag == '2').length,
           spinShow:false
         })
+        that.getSubtype(res.data);
+        // printLog(subtpArr, "components check_check.js", "line:56");
+        // printLog(obj1, "components check_check.js", "line:57");
       })
       // this.setData({
       //   checkDataArr:check_A_1_data.check_A_1,
@@ -75,6 +80,45 @@ Component({
           showRight:!this.data.showRight
         })
     },
+    selectConfirm(e){
+      this.setData({
+        spinShow:true
+      })
+      let seleceDataArr;
+      let {curSubtp, curLevel} = e.detail;
+      console.log(curSubtp, curLevel);
+      if (!curSubtp && !curLevel){
+        seleceDataArr = this.data.checkDataArr;
+      }else{
+        seleceDataArr = this.data.checkDataArr.filter(item => item.subtp === curSubtp || item.level === curLevel);
+      }
+      console.log(seleceDataArr)
+      this.setData({
+        seleceDataArr,
+        checkedNum: seleceDataArr.filter(item => item.flag == '1' || item.flag == '2').length,
+        spinShow: false
+      })
+      this.toggleTreeMenu();
+    },
+
+    getSubtype(arr){
+      let obj1 = {}
+      
+      let subtpArr = arr.reduce((cur, next) => {
+        obj1[next.subtp] ? "" : obj1[next.subtp] = 1 && cur.push(next);
+        return cur;
+      }, [])
+      
+      obj1 = {};
+      let i = 0;
+      subtpArr.forEach(item => {
+        obj1[i++] = item.subtp;
+      })
+      console.log(obj1)
+      this.setData({
+        subtp:obj1
+      })
+    },
 
 /**
  * 排查
@@ -83,13 +127,10 @@ Component({
       let index = e.target.dataset.index;
       let flag = e.target.dataset.flag;
       if(flag == '2'){
-        wx.showToast({
-          title: '该项目正在整改中,不能取消排查!',
-          icon:'none'
-        })
+        wxToast("该项目正在整改中,不能取消排查!","none",1500);
         return;
       }
-      let arr = this.data.checkDataArr;
+      let arr = this.data.seleceDataArr;
       var that = this;
       if (arr[index].flag == '1' || arr[index].flag == '3'){
         
@@ -100,21 +141,21 @@ Component({
             if (res.confirm) {
               arr[index].flag = '0';
               that.setData({
-                checkDataArr: arr,
+                seleceDataArr: arr,
                 checkedNum: arr.filter(item => item.flag == '1').length
               })
             }
-           
           }
         })
       }else{
         arr[index].flag = '1';
         this.setData({
-          checkDataArr: arr,
+          seleceDataArr: arr,
           checkedNum: arr.filter(item => item.flag == '1').length
         })
       }
     },
+
     seeDetail(e){
       let sid = e.currentTarget.dataset.sid;
       // console.log(eid,e);

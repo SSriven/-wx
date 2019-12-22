@@ -6,46 +6,41 @@
         <i-tab key="tab1" title="条件选择"></i-tab>
         <i-tab key="tab2" title="树形结构"></i-tab>
       </i-tabs>
-      <view class="tab-content" style="height:{{windowH-122}}px;">
-        <view hidden="{{current != 'tab1'}}">
-            <i-collapse name="{{name}}">
-              <i-collapse-item name="name2" title="类别" i-class-title="collapse-item-title" i-class-content="collapse-item-content">
-                <view slot="content" i-class-content="green-text">
-                  <view class="collapse-item-content-ul">
-                    <view class="collapse-item-content-ul-li">
-                      人力与资源
-                    </view>
-                    <view class="collapse-item-content-ul-li">
-                      环境
-                    </view>
-                    <view class="collapse-item-content-ul-li">
-                      人力与资源
-                    </view>
-                    <view class="collapse-item-content-ul-li">
-                      环境
-                    </view>
+      <view class="tab-content" style="height:{{windowH}}px;">
+        <view hidden="{{current != 'tab1'}}" style="height:{{windowH-122}}px;">
+          <i-collapse name="{{name}}">
+            <i-collapse-item name="name2" title="类别" i-class-title="collapse-item-title" i-class-content="collapse-item-content">
+              <view slot="content" i-class-content="green-text">
+                <view class="collapse-item-content-ul">
+                  <view wx:for="{{subtp}}" 
+                  wx:key="{{index}}" 
+                  data-index="{{index}}" 
+                  data-value="{{item}}"
+                  bindtap="selectSubtp" 
+                  class="collapse-item-content-ul-li {{curSubtpClass[index]}}">
+                    {{item}}
                   </view>
                 </view>
-              </i-collapse-item>
-              <i-collapse-item name="name3" title="隐患级别" i-class-title="collapse-item-title" i-class-content="collapse-item-content">
-                <view slot="content">
-                  <view class="collapse-item-content-ul">
-                    <view class="collapse-item-content-ul-li">
-                      低隐患
-                    </view>
-                    <view class="collapse-item-content-ul-li">
-                      一般隐患
-                    </view>
-                    <view class="collapse-item-content-ul-li">
-                      较大隐患
-                    </view>
-                    <view class="collapse-item-content-ul-li">
-                      严重隐患
-                    </view>
+              </view>
+            </i-collapse-item>
+            <i-collapse-item name="name3" title="隐患级别" i-class-title="collapse-item-title" i-class-content="collapse-item-content">
+              <view slot="content">
+                <view class="collapse-item-content-ul">
+                  <view wx:for="{{subLevel}}" wx:key="{{index}}"
+                  data-value="{{item}}"
+                  data-index="{{index}}"
+                  bindtap="selectLevel"
+                   class="collapse-item-content-ul-li {{curLevelClass[index]}}">
+                    {{item}}
                   </view>
                 </view>
-              </i-collapse-item>
-            </i-collapse>
+              </view>
+            </i-collapse-item>
+          </i-collapse>
+          <view class="drawer-container-btn">
+            <view class="confirm" bindtap="_confirm">确认</view>
+            <view class="reset" bindtap="reset">重置</view>
+          </view>
         </view>
         <view hidden="{{current != 'tab2'}}">
           <i-collapse name="{{name}}">
@@ -151,10 +146,7 @@
         </view>
       </view>
     </view>
-    <view class="drawer-container-btn">
-      <view class="confirm" bindtap="_confirm">确认</view>
-      <view class="reset">重置</view>
-    </view>
+
 
   </view>
 </i-drawer>

@@ -6,11 +6,11 @@
     header-flag="已排查"
     header-addr="{{addr}}" 
     header-enterprise="{{enterprise}}" 
-    header-check-num="{{checkDataArr.length}}"
+    header-check-num="{{seleceDataArr.length}}"
     header-checked-num="{{checkedNum}}"
     bind:toggleTreeMenu="toggleTreeMenu"></header>
     <view class="check-ul" style="height:{{windowH-180.5}}px;">
-        <view wx:for="{{checkDataArr}}" wx:key="index" class="check-ul-li" data-sid="{{item.sid}}" bindtap="seeDetail" >
+        <view wx:for="{{seleceDataArr}}" wx:key="index" class="check-ul-li" data-sid="{{item.sid}}" bindtap="seeDetail" >
             <view class="item-top" >
                 <text class="title">{{item.name}}</text>
                 <text class="level {{item.level == '一般隐患' ? 'level-1' : item.level == '较大隐患' ? 'level-2' : 'level-3'}}">
@@ -31,6 +31,8 @@
             </view>
         </view>
     </view>
-    <select-menu id="treeMenu_check" show-right="{{showRight}}" bind:toggleTreeMenu="toggleTreeMenu"></select-menu>
+    <select-menu id="treeMenu_check" show-right="{{showRight}}" bind:toggleTreeMenu="toggleTreeMenu"
+    bind:selectConfirm="selectConfirm"
+    subtp="{{subtp}}"></select-menu>
 </view>
 <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

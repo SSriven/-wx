@@ -48,3 +48,7 @@ export const storage = {
     wx.clearStorage();
   }
 }
+
+export function printLog(...content){
+  console.log(content);
+}

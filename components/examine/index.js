@@ -1,5 +1,6 @@
 // components/examine/index.js
 import examineData from '../../data/examine_A_1.js'
+import {wxToast} from "../../utils/util.js"
 const app = getApp();
 Component({
   /**
@@ -18,8 +19,7 @@ Component({
     windowH: app.globalData.windowH,
     windowW: app.globalData.windowW,
     showRight: false,
-    name: 'name1',
-    name1: 'name11',
+    examineDataArr:[],
     examineNum: 0,
     headerTitle: '隐患审核',
     headerSearch:false,
@@ -68,10 +68,7 @@ Component({
       let index = e.target.dataset.index;
       let that = this;
       if(stat == '2'){
-        wx.showToast({
-          title: '隐患整改中，无法驳回',
-          icon:'none'
-        })
+        wxToast('隐患整改中，无法驳回', 'none',1500);
         return;
       }
       this.rejectDialog.showDialog();
@@ -88,10 +85,7 @@ Component({
       let value = this.rejectDialog.data.value;
       console.log(value)
       if (app.globalData.pat.test(value) || value == null) {
-        wx.showToast({
-          title: '输入非法',
-          icon: "none"
-        })
+        wxToast('输入非法', 'none', 1500);
         return false;
       }
       this.rejectDialog.hideDialog();
@@ -101,10 +95,7 @@ Component({
         examineDataArr:arr,
         examineNum: examineData.data.filter(item => item.stat == '2').length
       })
-      wx.showToast({
-        title: '驳回成功',
-        icon:"success"
-      })
+      wxToast('驳回成功', 'success', 1500);
     },
     onExamine(e){
       let index = e.target.dataset.index;

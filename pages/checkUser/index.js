@@ -1,5 +1,6 @@
 // pages/checkUser/index.js
 import {storage} from '../../utils/util.js'
+import { printLog } from "../../utils/util.js"
 const app = getApp()
 Page({
 
@@ -15,7 +16,7 @@ Page({
    */
   onLoad: function (options) {
     let res = storage.get("userInfo");
-    console.log(res);
+    printLog(res,"checkUser_index.js","line:19");
     if(res){
       app.globalData.userInfo = res;
       wx.redirectTo({
@@ -23,31 +24,12 @@ Page({
       })
     }else{
       wx.redirectTo({
-        url: '../index/index',
+        url: '../login/index',
       })
     }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
 
   /**
    * 生命周期函数--监听页面卸载
@@ -57,25 +39,4 @@ Page({
       spinShow:false
     })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

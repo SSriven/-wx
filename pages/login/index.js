@@ -59,7 +59,7 @@ Page({
     that.spinControl.show(that);//显示加载
     request.post("/checkUser/" + data.acct + "/" + data.pwd,data)
     .then((res)=>{
-      console.log(res);
+      console.log(res,"login_index.js","line:62");
       that.loginObj.resolve(res,that);
     })
     .catch(err=>{

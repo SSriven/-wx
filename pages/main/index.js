@@ -2,6 +2,7 @@
 //获取应用实例
 const app = getApp()
 import {storage} from "../../utils/util.js"
+import {printLog} from "../../utils/util.js"
 Page({
   data: {
     current: 'checkpage',
@@ -22,6 +23,7 @@ Page({
   },
   onLoad: function () {
     let userInfo = storage.get("userInfo");
+    printLog("2113=>main_index.js line:26");
     let userType = userInfo.pid[0];
     this.setData({
       userType
