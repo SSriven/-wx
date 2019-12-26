@@ -1,0 +1,189 @@
+<!--pages/enterpriseDetailPage/index.wxml-->
+<text class="editor" bindtap="onEditor">编辑</text>
+<i-panel title="企业信息">
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{[1,2,3]}}">
+    <view class="picker">
+      <text class="key">社区(乡镇)</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">中心镇-社区B</text>
+    </view>
+  </picker>
+  <i-input value="B企业C" title="企业名称" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="12345" title="信用代码" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'nomal' : 'wrapped'}}"/>
+  <i-input value="第三方" title="通信地址" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="33180" title="邮政编码" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="115.7187" title="经度" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="28.6048" title="纬度" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <picker mode="date" disabled="{{disabled}}" value="{{date}}" start="2015-01-01" end="2024-01-01" bindchange="bindDateChange">
+    <view class="picker">
+      <text class="key">成立时间</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">2018年11月14日</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">企业规模</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">小型</text>
+    </view>
+  </picker>
+  <i-input value="5" title="占地面积(平方米)" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="5" title="职工人数" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="5" title="资产总额(万)" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="5" title="注册资金(万)" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="5" title="年销售收入(万)" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="5" title="年利润(万)" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">经济类型</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">国有</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">所属行业</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">餐饮业</text>
+    </view>
+  </picker>
+  <i-input value="发士大夫" title="法人姓名" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="实打实" title="职务" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="110" title="办公室电话(法人)" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="110" title="手机(法人)" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="实打实" title="联系人姓名" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="5626" title="联系人手机" type="number" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="菜单" title="所属集团公司名称" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="收到" title="安全管理职能部门" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <i-input value="从DVD" title="主要工艺" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">工艺等级</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">零级工艺</text>
+    </view>
+  </picker>
+  <i-input value="成都v" title="涉及主要物料" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">职业危害因素检测</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">未检测</text>
+    </view>
+  </picker>
+  <i-input value="曾多次" title="职业危害因素" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">人体健康体检档案</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <i-input value="曾多次" title="设备设施" right disabled="{{disabled}}" mode="{{disabled ? 'normal' : 'wrapped'}}"/>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">第三方检测、检验</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">第三方评估</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">物料的火灾危害性</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">安全投入计划或方案</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">安全费用使用记录</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">应急物资</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">应急演练</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">培训计划或方案</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">培训情况</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">人员取证情况</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">事故管理</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">资质证书</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">安全标准化级别</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">粉尘爆炸</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+  <picker bindchange="bindPickerChange" disabled="{{disabled}}" range="{{['微型','小型','中型','大型']}}">
+    <view class="picker">
+      <text class="key">有限空间类型</text>
+      <i-icon class="unfold" type="unfold" />
+      <text class="value">无</text>
+    </view>
+  </picker>
+</i-panel>

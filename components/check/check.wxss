@@ -9,14 +9,15 @@
 }
 .check-ul .check-ul-li{
     background: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     /* height:105px; */
     padding:9.375px 15px;
     overflow: hidden;
     margin-bottom:9.375px;
-    box-shadow: 0 3px 3px rgba(160, 160, 160, 0.35);
+    /* box-shadow: 0 3px 3px rgba(160, 160, 160, 0.35); */
     position: relative;
     animation: show 1s ease-in-out;
+    border:1rpx solid #dddee1;
 }
 @keyframes show{
   from{
@@ -32,7 +33,7 @@
     height:30px;
 }
 .check-ul .check-ul-li .item-top .title{
-    font-size: 16px;
+    font-size: 14px;
     color:#303133;
     float: left;
     margin-right: 10px;
@@ -76,13 +77,13 @@
     /* height:30px; */
     line-height: 20px;
     overflow: hidden;
-    white-space:warp;
-    overflow:hidden;
     display:-webkit-box;
     text-overflow:ellipsis;
     -webkit-line-clamp:2;
     -webkit-box-orient:vertical;
     white-space:normal;
+    font-size: 13px;
+    color:#80848f;
 }
 .check-ul .check-ul-li .item-bottom{
     height:35px;

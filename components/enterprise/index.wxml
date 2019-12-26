@@ -1,0 +1,16 @@
+<!--components/enterprise/index.wxml-->
+<view class="warp">
+  <view class="header">
+    <text>企业总数：{{enterpriseArr.length}}</text>
+    <i-icon class="icon add" size="28" type="delete" />
+    <i-icon class="icon search" size="28" type="search" />
+  </view>
+  <view style="height:40px;"></view>
+  <view class="enterprise-list" style="height:{{windowH-90}}px;">
+    <i-card wx:for="{{enterpriseArr}}" wx:key="{{index}}" title="{{item.enm}}" i-class="enterprise-item" extra="查看详情" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+      <view slot="footer">地址：{{item.cssbname}} {{item.townname}} {{item.zonename}}</view>
+      <!-- <view slot="footer">注册时间：2019-1-1</view> -->
+    </i-card>
+  </view>
+</view>
+<i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

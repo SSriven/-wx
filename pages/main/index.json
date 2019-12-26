@@ -5,7 +5,9 @@
     "check-page":"../../components/check/check",
     "examine-page":"../../components/examine/index",
     "aboutme-page": "../../components/aboutMe/index",
-    "rectification-page":"../../components/rectification/index"
+    "rectification-page":"../../components/rectification/index",
+    "enterprise-page": "../../components/enterprise/index"
   },
-  "navigationBarBackgroundColor": "#409eff"
+  "navigationBarBackgroundColor": "#409eff",
+  "enablePullDownRefresh":true
 }

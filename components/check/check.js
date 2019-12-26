@@ -30,26 +30,13 @@ Component({
     headerTitle:'职业健康',
     headerSearch:false,//显示筛选
     headerRightBottom:false,//显示已排查
-    spinShow:true,//显示加载
+    spinShow:false,//隐藏加载
   },
 
   lifetimes: {
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
     attached: function () { 
-      let that = this;
-      request.post("/selectScrthrtByStid/255C86119272439dBD06D259A9E3D209E98FEDA21489A4564851B8F6407C4EB63",{})
-      .then(res=>{
-        printLog(res.data,"components check_check.js","line:42");
-        that.setData({
-          checkDataArr: res.data,
-          seleceDataArr:res.data,
-          checkedNum: res.data.filter(item => item.flag == '1' || item.flag == '2').length,
-          spinShow:false
-        })
-        that.getSubtype(res.data);
-        // printLog(subtpArr, "components check_check.js", "line:56");
-        // printLog(obj1, "components check_check.js", "line:57");
-      })
+      // this.reload();
       // this.setData({
       //   checkDataArr:check_A_1_data.check_A_1,
       //   checkedNum:check_A_1_data.check_A_1.filter(item => item.flag == '1').length
@@ -64,6 +51,7 @@ Component({
     detached: function () { },
   },
 
+
   /**
    * 组件的方法列表
    */
@@ -71,6 +59,52 @@ Component({
 
     reload(){
       console.log("check reload");
+      let that = this;
+      that.spinShow();
+      let parm = "255C86119272439dBD06D259A9E3D209E98FEDA21489A4564851B8F6407C4EB63";
+      this.selectScrthrtByStid(parm);
+      this.treeMenu_check.loadTreeMenu();
+    },
+
+    selectScrthrtByStid(parm){
+      let that = this;
+      that.setData({
+        checkDataArr: [],
+        seleceDataArr: [],
+        checkedNum: 0
+      })
+      request.post("/selectScrthrtByStid/"+parm, {})
+        .then(res => {
+          printLog(res.data, "components check_check.js", "line:42");
+          that.setData({
+            checkDataArr: res.data,
+            seleceDataArr: res.data,
+            checkedNum: res.data.filter(item => item.flag == '1' || item.flag == '2').length
+          })
+          that.spinHide();
+          that.getSubtype(res.data);
+        })
+    },
+
+
+    /**
+ * 控制加载的显示与隐藏
+ */
+    /**
+       * 显示加载
+       */
+    spinShow() {
+      this.setData({
+        spinShow: true
+      })
+    },
+    /**
+     * 隐藏加载
+     */
+    spinHide() {
+      this.setData({
+        spinShow: false
+      })
     },
     /**
      * 打开筛选菜单栏
@@ -80,9 +114,18 @@ Component({
           showRight:!this.data.showRight
         })
     },
+    selectScrtp(e){
+      this.spinShow();
+      let { eid, prjid} = e.detail;
+      console.log(eid, prjid);
+      this.selectScrthrtByStid(prjid+eid);
+      this.toggleTreeMenu();
+    },
     selectConfirm(e){
+      this.spinShow();
       this.setData({
-        spinShow:true
+        seleceDataArr:[],
+        checkedNum: 0
       })
       let seleceDataArr;
       let {curSubtp, curLevel} = e.detail;
@@ -101,6 +144,9 @@ Component({
       this.toggleTreeMenu();
     },
 
+    /**
+     * 获取所有隐患类型
+     */
     getSubtype(arr){
       let obj1 = {}
       

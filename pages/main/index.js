@@ -5,18 +5,12 @@ import {storage} from "../../utils/util.js"
 import {printLog} from "../../utils/util.js"
 Page({
   data: {
-    current: 'checkpage',
+    current: '',
     windowH:app.globalData.windowH,
     windowW:app.globalData.windowW,
     
   },
   handleChange({ detail }) {
-    switch(detail.key){
-      case 'checkpage':
-        this.check_page.reload();break;
-      case 'examinepage':
-        this.examine_page.reload(); break;
-    }
     this.setData({
       current: detail.key
     });
@@ -32,6 +26,14 @@ Page({
   onReady:function(){
     this.check_page = this.selectComponent("#check_page");
     this.examine_page = this.selectComponent("#examine_page");
+    switch (this.data.userType) {
+      case 'T': this.setData({ current: 'checkpage' });this.check_page.reload();  break;
+    }
+  },
+  onPullDownRefresh:function(){
+    switch (this.data.current) {
+      case 'checkpage': this.check_page.reload(); wx.stopPullDownRefresh();break;
+    }
   }
   
 })

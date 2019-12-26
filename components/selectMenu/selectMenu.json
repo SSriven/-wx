@@ -8,6 +8,7 @@
     "i-cell": "../dist/cell/index",
     "i-icon": "../dist/icon/index",
     "i-tabs": "../dist/tabs/index",
-    "i-tab": "../dist/tab/index"
+    "i-tab": "../dist/tab/index",
+    "i-spin": "../dist/spin/index"
   }
 }

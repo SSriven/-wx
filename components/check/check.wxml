@@ -32,7 +32,7 @@
         </view>
     </view>
     <select-menu id="treeMenu_check" show-right="{{showRight}}" bind:toggleTreeMenu="toggleTreeMenu"
-    bind:selectConfirm="selectConfirm"
+    bind:selectConfirm="selectConfirm" bind:selectScrtp="selectScrtp"
     subtp="{{subtp}}"></select-menu>
 </view>
 <i-spin size="large" fix wx:if="{{ spinShow }}"></i-spin>

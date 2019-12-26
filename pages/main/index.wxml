@@ -10,6 +10,9 @@
     <view hidden="{{current != 'rectification'}}">
       <rectification-page id="rectification_page"></rectification-page>
     </view>
+    <view hidden="{{current != 'enterprise'}}">
+      <enterprise-page id="enterprise_page"></enterprise-page>
+    </view>
     <view hidden="{{current != 'aboutMePage'}}">
       <aboutme-page id="aboutme_page"></aboutme-page>
     </view>
@@ -19,6 +22,7 @@
       <i-tab-bar-item wx:if="{{userType === 'T'}}" key="checkpage" icon="homepage" current-icon="homepage_fill" title="排查"></i-tab-bar-item>
       <i-tab-bar-item wx:if="{{userType === 'X'}}" key="examinepage" icon="group" current-icon="group_fill" title="审核"></i-tab-bar-item>
       <i-tab-bar-item wx:if="{{userType === 'P'}}" key="rectification" icon="remind" current-icon="remind_fill" title="整改"></i-tab-bar-item>
+      <i-tab-bar-item key="enterprise" icon="group" current-icon="group_fill" title="企业"></i-tab-bar-item>
       <i-tab-bar-item key="aboutMePage" icon="addressbook" current-icon="addressbook_fill" title="我"></i-tab-bar-item>
     </i-tab-bar>
   </view>

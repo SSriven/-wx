@@ -1,0 +1,37 @@
+/* pages/enterpriseDetailPage/index.wxss */
+
+.editor{
+  position: absolute;
+  right:16px;
+  line-height: 50.6px;
+  font-size: 14px;
+  color:#1c2438;
+  z-index: 999;
+}
+picker{
+  width: 100%;
+}
+picker .picker{
+  height:43.9px;
+  background: #fff;
+  padding:0 16px;
+}
+picker .picker .key{
+  line-height: 43.9px;
+  font-size: 14px;
+  min-width: 65px;
+  display: inline-block;
+  padding-right:10px;
+  color:#495060;
+}
+picker .picker .value{
+  float: right;
+  line-height: 43.9px;
+  margin-right:10px;
+}
+.unfold{
+  float: right;
+  font-size: 14px;
+  line-height: 43.9px;
+  color:#333;
+}

@@ -1,0 +1,55 @@
+/* components/enterprise/index.wxss */
+.warp{
+  height:100%;
+  position: relative;
+ 
+}
+.warp .header{
+  height:40px;
+   padding:0 15px;
+   background:linear-gradient(to bottom, #409eff, #5ac8fa);
+   position: fixed;
+   top:0;
+   left:0;
+   width: 100%;
+box-sizing: border-box;
+z-index: 999;
+
+}
+.warp .header text{
+  float: left;
+  font-size: 14px;
+  color:#f2f6fc;
+  line-height:40px;
+}
+.warp .header .icon{
+  float: right;
+  line-height:40px;
+  color:#f2f6fc;
+}
+.warp .header .search{
+  margin-right:20px;
+}
+.warp .header .add{
+  transform: rotate(45deg);
+}
+.warp .enterprise-list{
+  overflow: hidden;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  padding:9.375px 0;
+}
+.warp .enterprise-list .enterprise-item{
+  margin-bottom:9.375px;
+  background: #fff;
+  animation: show 1s ease-in-out;
+}
+@keyframes show{
+  from{
+    transform:translateY(12px);
+    opacity: 0;
+  }to{
+    transform:translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/enterpriseDetailPage/index",
     "pages/checkUser/index",
     "pages/login/index",
     "pages/main/index",
     "pages/logs/logs",
     "pages/checkDetailPage/index",
     "pages/examineDetailPage/index"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
